@@ -41,6 +41,9 @@ public class LinkedList {
 		 * insert 30 between 56 and 70
 		 */
 		insertBetween(56, 30);
+		/*
+		 * Delete first element from Linked List
+		 */
 		pop();
 		printList();
 	}
