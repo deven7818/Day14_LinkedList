@@ -27,6 +27,7 @@ public class LinkedList {
 		 * 4.Inserting Element in Between
 		 * 5.Delete the first Element from LinkedLit. 
 		 * 6.Delete last Node from Linked List.
+		 * 7.Search Linked List to find Node With particular Value
 		 * 
 		 * 
 		 */
@@ -51,9 +52,18 @@ public class LinkedList {
 		/*
 		 * Delete last element from Linked list with popLast method
 		 */
-		popLast();
+		// popLast();
 
+		/*
+		 * Print Linked List
+		 */
 		printList();
+		
+		
+		/*
+		 * Search linked List to find node with value 30 in linked list
+		 */
+		searchNode(30);
 	}
 
 	/*
@@ -133,6 +143,45 @@ public class LinkedList {
 		}
 		System.out.println("Deleted node  from end :" + pointer.key);
 		prev.next = null;
+	}
+
+	/*
+	 * Search Linked List to find node with particular value 
+	 */
+	public static void searchNode(int data) {
+		Node currNode = head;
+		int i = 1;
+		boolean flag = false;
+
+		/*
+		 * check if list is empty
+		 */
+		if (head == null) {
+			System.out.println("List is Empty");
+		} else {
+			while (currNode != null) {
+				if (currNode.key == data) {
+					flag = true;
+					break;
+				}
+				i++;
+				currNode = currNode.next;
+
+			}
+		}
+		/*
+		 * if element found then print that position
+		 */
+		if (flag) {
+			System.out.println("Element is present  in list at position : " + i);
+		}
+
+		/*
+		 * else print Element not found
+		 */
+		else {
+			System.out.println("Element is not present at list");
+		}
 	}
 
 }
