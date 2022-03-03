@@ -21,30 +21,34 @@ public class LinkedList {
 	public static void main(String[] args) {
 
 		/*
-		 * PROCEDURE 1.Creating Simple Linked List 56 , 30 , 70 
-		 * 2.Ability to add Linked List
-		 * 3.Creating And Appending Linked List 
+		 * PROCEDURE 
+		 * 1.Creating Simple Linked List 56 , 30 , 70 
+		 * 2.Ability to add Linked List.
+		 * 3.Creating And Appending Linked List. 
 		 * 4.Inserting Element in Between
-		 * 5.Delete the first Element from LinkedLit 
+		 * 5.Delete the first Element from LinkedLit. 
+		 * 6.Delete last Node from Linked List
 		 * 
 		 */
 
-		
 		/*
 		 * Creating Link List by Appending 30 and 70 to 56
 		 */
 		appendList(56);
-
+		appendList(30);
 		appendList(70);
 
 		/*
 		 * insert 30 between 56 and 70
 		 */
-		insertBetween(56, 30);
+		// insertBetween(56, 30);
+
+		
 		/*
 		 * Delete first element from Linked List
 		 */
-		pop();
+		 pop();
+
 		printList();
 	}
 
@@ -101,7 +105,7 @@ public class LinkedList {
 		newNode.next = curruntNode.next;
 		curruntNode.next = newNode;
 	}
-	
+
 	/*
 	 * pop Method to delete first Element from Linked List
 	 */
@@ -110,5 +114,7 @@ public class LinkedList {
 		head.next = null;
 		head = curruntNode;
 	}
+
+
 
 }
