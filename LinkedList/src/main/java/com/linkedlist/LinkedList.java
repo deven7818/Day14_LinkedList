@@ -21,16 +21,23 @@ public class LinkedList {
 	public static void main(String[] args) {
 
 		/*
-		 * PROCEDURE 1.Creating Simple Linked List 56 , 30 , 70 2.Ability to add Linked
-		 * List 3.creating And Appending Linked List
+		 * PROCEDURE 1.Creating Simple Linked List 56 , 30 , 70 
+		 * 2.Ability to add Linked List
+		 * 3.creating And Appending Linked List 
+		 * 4.Inserting Element in Between
 		 */
 
 		/*
 		 * Creating Link List by Appending 30 and 70 to 56
 		 */
 		appendList(56);
-		appendList(30);
+
 		appendList(70);
+
+		/*
+		 * insert 30 between 56 and 70
+		 */
+		insertBetween(56, 30);
 		printList();
 	}
 
@@ -71,6 +78,21 @@ public class LinkedList {
 			}
 			currentNode.next = newNode;
 		}
+	}
+
+	/*
+	 * method to insert between elements
+	 */
+	public static void insertBetween(int position, int data) {
+		Node curruntNode = head;
+		Node newNode = new Node(data);
+
+		while (curruntNode.key != position) {
+			System.out.println(curruntNode.key);
+			curruntNode = curruntNode.next;
+		}
+		newNode.next = curruntNode.next;
+		curruntNode.next = newNode;
 	}
 
 }
