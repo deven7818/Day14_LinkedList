@@ -60,13 +60,21 @@ public class LinkedList {
 		 * Print Linked List
 		 */
 		printList();
-		
+		/*
+		 * insert element at position
+		 */
 		insertMid(3,40 );
 		printList();
+		
 		/*
 		 * Search linked List to find node with value 30 in linked list
 		 */
 		searchNode(30);
+		/*
+		 * Delete element from Linked list
+		 */
+		deleteElement(40);
+		printList();
 	}
 
 	/**
@@ -206,14 +214,14 @@ public class LinkedList {
 		 * if element found then print that position
 		 */
 		if (flag) {
-			System.out.println("\n" +"Element" +data+" is present  in list at position : " + i);
+			System.out.println("\n" +"Element " +data+" is present  in list at position : " + i);
 		}
 
 		/*
 		 * else print Element not found
 		 */
 		else {
-			System.out.println("Element is not present at list");
+			System.out.println(" Element is not present at list");
 		}
 	}
 	
@@ -254,6 +262,35 @@ public class LinkedList {
 		 */
 		newNode.next = currNode;
 		System.out.println("\nAdded a node with data " + data + " at the position " + position);
+	}
+
+	
+	/**
+	 * [9] Method to Delete the particular Element
+	 * 1. first assign currentNode And prevNode to head
+	 * 2. check current node for null 
+	 * 3. delete the node
+	 * 4. update prev node to current Node
+	 * 5. update current node to nect node
+	 * @param data : Here we are passing the data to delete
+	 */	
+	public static void deleteElement(int data) {
+		Node currentNode = head;
+		Node preNode = head;
+		
+		while (currentNode != null) {
+			if(currentNode.key == data) {
+				preNode.next = currentNode.next;
+
+				System.out.println(data +" is deleted");
+				return;
+				
+			}
+			preNode = currentNode;
+			currentNode = currentNode.next;
+		}
+
+		System.out.println("Data is Not present in Linked list " + data);
 	}
 	
 }
