@@ -30,6 +30,7 @@ public class LinkedList {
 		 * 7.Search Linked List to find Node With particular Value
 		 * 8.Insert Element after particular node
 		 * 9. Delete Particular Element 
+		 * 10.create Ordered Linked List in ascending order of data.
 		 * 
 		 */
 
@@ -76,6 +77,13 @@ public class LinkedList {
 		 */
 		deleteElement(40);
 		printList();
+		
+		/*
+		 * Sorting the Linked List
+		 */
+		
+		SortedList();
+
 	}
 
 	/**
@@ -292,6 +300,38 @@ public class LinkedList {
 		}
 
 		System.out.println("Data is Not present in Linked list " + data);
+	}
+	
+
+	/**
+	 * [10] Method to create ordered Linked List
+	 * 1. first assign currentNode to head index to null
+	 * 2. check current head for null if null then list is empty 
+	 * 3. swap for sorting
+	 * 
+	 */
+	
+	public static void SortedList() {
+		Node currNode = head;
+		Node index = null;
+		int temp;
+		if(head == null) {
+			System.out.println("List is Empty");
+			return;
+		}else {
+			while(currNode != null) {
+				index = currNode.next;
+				while(index != null) {
+					if(currNode.key > index.key) {
+						temp = currNode.key;
+						currNode.key = index.key;
+						index.key = temp;
+					}
+					index = index.next;
+				}
+				currNode = currNode.next;
+			}
+		}
 	}
 	
 }
