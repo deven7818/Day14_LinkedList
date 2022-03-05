@@ -29,7 +29,7 @@ public class LinkedList {
 		 * 6.Delete last Node from Linked List.
 		 * 7.Search Linked List to find Node With particular Value
 		 * 8.Insert Element after particular node
-		 * 9. Delete Particular Element 
+		 * 9. Delete Particular Element from Linked List
 		 * 
 		 */
 
